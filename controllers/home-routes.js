@@ -56,6 +56,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/post/:id", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
+  }
   Post.findOne({
     where: {
       id: req.params.id,
