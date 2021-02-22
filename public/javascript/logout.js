@@ -19,7 +19,7 @@ function myFunction(e) {
 // check time and increment if it hasn't been 5 minutes
 function check_Mouse() {
   // logout after 5 mins of inactivity
-  if (count === 5) {
+  if (count === 300) {
     count = 0;
     logout();
   } else {
